@@ -1,7 +1,7 @@
 pub mod binary {
 
     pub fn vanilla_binary(list: &[usize], target: usize) -> Option<usize> {
-        //returns index of target
+        //returns option Some with wrapped index of target
         //or option None if not found
         let mut left: usize = 0;
         let mut right: usize = list.len() - 1;
