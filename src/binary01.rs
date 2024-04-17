@@ -11,6 +11,12 @@ pub mod binary {
         while left <= right {
             if list[mid] == target {
                 return Some(mid);
+            } else if list[mid] > target {
+                right = mid - 1;
+                mid = (right - left) / 2;
+            } else {
+                left = mid + 1;
+                mid = (right - left) / 2;
             }
         }
 
