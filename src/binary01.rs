@@ -1,5 +1,4 @@
-pub mod binary {
-
+mod binary01 {
     pub fn vanilla_binary(list: &[usize], target: usize) -> Option<usize> {
         //returns option Some with wrapped index of target
         //or option None if not found

@@ -1,11 +1,9 @@
-use crate::binary01::vanilla_binary;
-
 #[cfg(test)]
 mod tests {
 
     #[test]
     fn result_present() {
-        let list = vec![1, 3, 5, 7, 8];
+        let list = [1, 3, 5, 7, 8];
         let target = 5;
 
         //should return 2
@@ -14,7 +12,7 @@ mod tests {
 
     #[test]
     fn result_missing() {
-        let list = vec![1, 2, 3, 4, 5, 6, 7];
+        let list = [1, 2, 3, 4, 5, 6, 7];
         let target = 0;
 
         //should return -1
@@ -23,7 +21,7 @@ mod tests {
 
     #[test]
     fn larger_array() {
-        let list = vec![2, 8, 89, 120, 1000];
+        let list = [2, 8, 89, 120, 1000];
         let target = 120;
 
         //should return 3
@@ -32,7 +30,7 @@ mod tests {
 
     #[test]
     fn smaller_array() {
-        let list = vec![10, 20];
+        let list = [10, 20];
         let target = 20;
 
         //should return 1
@@ -41,7 +39,7 @@ mod tests {
 
     #[test]
     fn smallest_array() {
-        let mut list = vec![1];
+        let mut list = [1];
         let target = 1;
 
         //should return 0
@@ -59,7 +57,7 @@ mod tests {
 
     #[test]
     fn not_found() {
-        let list = vec![1, 2, 3, 4, 5];
+        let list = [1, 2, 3, 4, 5];
         let target = 10;
 
         //should return -1
