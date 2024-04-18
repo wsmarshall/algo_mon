@@ -9,7 +9,7 @@ mod bo2_tests {
         let list: [bool; 5] = [false, false, true, true, true];
 
         //should return 2
-        assert_eq!(find_boundary(&list).unwrap_or_else(1.5), 2);
+        assert_eq!(find_boundary(&list), Some(2));
     }
 
     #[test]
@@ -17,7 +17,7 @@ mod bo2_tests {
         let list: [bool; 1] = [true];
 
         //should return 0
-        assert_eq!(find_boundary(&list).unwrap_or(1.5), 0);
+        assert_eq!(find_boundary(&list), Some(0));
     }
 
     #[test]
@@ -32,8 +32,8 @@ mod bo2_tests {
     fn only_true() {
         let list: [bool; 5] = [true, true, true, true, true];
 
-        //should return 1
-        assert_eq!(find_boundary(&list).unwrap_or_else(1.5), 0);
+        //should return 0
+        assert_eq!(find_boundary(&list), Some(0));
     }
 
     #[test]
@@ -41,13 +41,13 @@ mod bo2_tests {
         let list: [bool; 2] = [false, true];
 
         //should return 1
-        assert_eq!(find_boundary(&list).unwrap_or_else(1.5), 1);
+        assert_eq!(find_boundary(&list), Some(1));
     }
 
     #[test]
     fn last_true() {
         let list: [bool; 9] = [false, false, false, false, false, false, false, false, true];
         //should return 8
-        assert_eq!(find_boundary(&list).unwrap_or_else(1.5), 8);
+        assert_eq!(find_boundary(&list), Some(8));
     }
 }
