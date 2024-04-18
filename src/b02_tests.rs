@@ -41,13 +41,13 @@ mod bo2_tests {
         let list: [bool; 2] = [false, true];
 
         //should return 1
-        assert_eq!(vanilla_binary(&list).unwrap_or_else(1.5), 1);
+        assert_eq!(find_boundary(&list).unwrap_or_else(1.5), 1);
     }
 
     #[test]
     fn last_true() {
         let list: [bool; 9] = [false, false, false, false, false, false, false, false, true];
         //should return 8
-        assert_eq!(vanilla_binary(&list).unwrap_or_else(1.5), 8);
+        assert_eq!(find_boundary(&list).unwrap_or_else(1.5), 8);
     }
 }
