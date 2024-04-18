@@ -10,9 +10,10 @@ pub fn vanilla_binary(list: &[usize], target: usize) -> Option<usize> {
     }
     let mut right: usize = list.len() - 1;
 
-    let mut mid: usize = (right + left) / 2;
+    let mut mid: usize;
 
     while left <= right {
+        mid = left + ((right - left) / 2); //to avoid overflow
         match list[mid].cmp(&target) {
             Equal => return Some(mid),
             Less => left = mid + 1,
@@ -25,7 +26,6 @@ pub fn vanilla_binary(list: &[usize], target: usize) -> Option<usize> {
                 }
             }
         }
-        mid = (left + right) / 2;
     }
 
     None
