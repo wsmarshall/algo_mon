@@ -20,6 +20,7 @@ pub fn vanilla_binary(list: &[usize], target: usize) -> Option<usize> {
             Greater => {
                 if right < 1 {
                     //avoids underflow from usize indexing
+                    //particularly when right = 0
                     break;
                 } else {
                     right = mid - 1
@@ -27,6 +28,6 @@ pub fn vanilla_binary(list: &[usize], target: usize) -> Option<usize> {
             }
         }
     }
-
+    //value not present in input array
     None
 }
