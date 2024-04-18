@@ -5,7 +5,7 @@ pub fn vanilla_binary(list: &[usize], target: usize) -> Option<usize> {
     //or option None if not found
     let mut left: usize = 0;
     if list.is_empty() {
-        //accounting for the empty array
+        //accounting for the empty array input
         return None;
     }
     let mut right: usize = list.len() - 1;
@@ -18,6 +18,7 @@ pub fn vanilla_binary(list: &[usize], target: usize) -> Option<usize> {
             Less => left = mid + 1,
             Greater => {
                 if right < 1 {
+                    //avoids underflow from usize indexing
                     break;
                 } else {
                     right = mid - 1
