@@ -1,11 +1,22 @@
-mod b02;
-mod b02_tests;
+use crate::List::{Cons, Nil};
+use std::cell:RefCell;
+usestd::rc::Rc;
 
-use crate::b02::find_boundary;
+#[derive(Debug)]
+enum List {
+    Cons(i32, RefCell<Rc<List>>),
+    Nil,
+}
+
+impl List {
+    fn tail(&self) -> Option<&RefCell<Rc<List>>> {
+        match self {
+            Cons(_, item) => Some(item),
+            Nil => None,
+        }
+    }
+}
 
 fn main() {
-    let list: [bool; 5] = [true, true, true, true, true];
-
-    //should return 0
-    assert_eq!(find_boundary(&list), Some(0));
+    
 }
